@@ -1,14 +1,13 @@
-function prueba(id){
+
+const urlParams = new URLSearchParams(window.location.search);
+const characterId = urlParams.get('id');
+
+
 console.log('ID capturado:', characterId); 
 
 console.log('ID del personaje capturado:', characterId); 
-console.log('ID capturado:', characterId); 
 
-console.log('ID del personaje capturado:', characterId); 
-
-const urlInfo = `https://dragonball-api.com/api/characters/${id}`;
-const urlTransformaciones = `https://dragon-ball-002v.onrender.com/index_info.html?id=1`;
-
+const urlInfo = `https://dragonball-api.com/api/characters/${characterId}`;
 
 const opciones = {
         method: 'GET',
@@ -100,7 +99,7 @@ if (characterId) {
 
 const transformaciones = document.getElementById('transformaciones')
 
-fetch(urlTransformaciones, opciones)
+fetch(urlInfo, opciones)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la respuesta: ' + response.status);
@@ -148,12 +147,3 @@ fetch(urlTransformaciones, opciones)
         .catch(error => {
             console.error("Error al obtener las transformaciones:", error);
         });
-    };
-
-    const enlaceTransformaciones = new URLSearchParams(window.location.search);
-    const obtenerId = enlaceTransformaciones.get('characterId');
-    
-    // Llamar a la función solo para el personaje cuyo ID coincide con el de la URL
-    if (obtenerId) {
-        prueba(obtenerId);
-}
