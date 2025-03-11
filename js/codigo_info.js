@@ -6,8 +6,8 @@ console.log('ID capturado:', characterId);
 
 console.log('ID del personaje capturado:', characterId); 
 
-const urlInfo = `https://dragonball-api.com/api/characters/${id}/transformations`;
-const urlTransformaciones = `https://dragonball-api.com/api/characters/${id}`;
+const urlInfo = `https://dragonball-api.com/api/characters/${id}`;
+const urlTransformaciones = `https://dragonball-api.com/api/characters/${id}/transformations`;
 
 
 const opciones = {
