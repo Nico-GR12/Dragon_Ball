@@ -15,9 +15,6 @@ const opciones = {
     };
 
 if (characterId) {
-    
-
-    
 
     fetch(urlInfo, opciones)
         .then(response => {
@@ -110,17 +107,6 @@ fetch(urlInfo, opciones)
 
             if (Array.isArray(personaje.transformations)) {
                 personaje.transformations.forEach(transformacion => {
-
-                    // const card = document.createElement("div");
-                    // card.classList.add('character-card', 'col-8', 'col-md-5', 'col-lg-3', 'fondo', 'text-center', 'mx-4', 'mt-5', 'rounded');
-                    // container.appendChild(card);
-
-                    // const img = document.createElement("img");
-                    // img.src = transformacion.image;
-                    // img.classList.add('img-fluid', 'w-75', 'goku');
-
-                    // card.appendChild(img);
-                    // transformaciones.appendChild(card);
 
 
                     const cartaTranfor = document.createElement("div");
