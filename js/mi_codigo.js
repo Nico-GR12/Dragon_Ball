@@ -160,6 +160,7 @@ fetch(link, respuesta)
             
             personaje.items.forEach(personaje => {
 
+
                 const card = document.createElement("div");
                 card.classList.add('character-card', 'col-8', 'col-md-5', 'col-lg-3', 'fondo', 'text-center', 'mx-4', 'mt-5', 'rounded');
                 
@@ -167,6 +168,12 @@ fetch(link, respuesta)
                 const img = document.createElement("img");
                 img.src = personaje.image;
                 img.classList.add('img-fluid', 'goku');
+
+                const linkTransformacion= `./index2.html?characterId=${personaje.id}`
+
+        const enlace1 = document.createElement("a");
+                enlace1.href = linkTransformacion;
+                enlace1.appendChild(img);
 
                 const enlace = document.createElement('a');
                 enlace.href = `index_info.html?id=${personaje.id}`;

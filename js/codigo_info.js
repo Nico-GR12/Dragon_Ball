@@ -7,7 +7,7 @@ console.log('ID capturado:', characterId);
 console.log('ID del personaje capturado:', characterId); 
 
 const urlInfo = `https://dragonball-api.com/api/characters/${id}`;
-const urlTransformaciones = `https://dragonball-api.com/api/characters/${id}/transformations`;
+const urlTransformaciones = `https://dragon-ball-002v.onrender.com/index_info.html?id=1`;
 
 
 const opciones = {
@@ -150,9 +150,10 @@ fetch(urlTransformaciones, opciones)
         });
     };
 
-    const urlParams = new URLSearchParams(window.location.search);
-const characterId = urlParams.get('id');
-
-if (characterId) {
-    prueba(characterId);
+    const enlaceTransformaciones = new URLSearchParams(window.location.search);
+    const obtenerId = enlaceTransformaciones.get('characterId');
+    
+    // Llamar a la función solo para el personaje cuyo ID coincide con el de la URL
+    if (obtenerId) {
+        prueba(obtenerId);
 }
