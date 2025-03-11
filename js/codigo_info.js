@@ -1,13 +1,12 @@
 
-const urlParams = new URLSearchParams(window.location.search);
-const characterId = urlParams.get('id');
 
 
+function prueba(id){
 console.log('ID capturado:', characterId); 
 
 console.log('ID del personaje capturado:', characterId); 
 
-const urlInfo = `https://dragonball-api.com/api/characters/${characterId}`;
+const urlInfo = `https://dragonball-api.com/api/characters/${id}`;
 
 const opciones = {
         method: 'GET',
@@ -147,3 +146,11 @@ fetch(urlInfo, opciones)
         .catch(error => {
             console.error("Error al obtener las transformaciones:", error);
         });
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+const characterId = urlParams.get('id');
+
+if (characterId) {
+    prueba(characterId);
+}
